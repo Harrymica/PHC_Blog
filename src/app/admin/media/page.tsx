@@ -1,11 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { createClient } from "@/lib/supabase/client"
-import { Button } from "@/components/ui/button"
-import { Trash2, Edit2, Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Filter, ListFilter, Calendar} from "lucide-react" 
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
+import { Trash2, Edit2, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Filter, ListFilter, Calendar} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {DatePicker} from "@/components/admin/DatePicker"
 
 const CATEGORIES = [
@@ -172,7 +172,7 @@ export default function MediaLibraryPage() {
       {/* Search */}
       <div className="flex items-center flex-grow max-[799px]:basis-3/4">
         <Search className="text-muted-foreground mr-2" size={20} />
-        <Input
+        <input
           placeholder="Search by title..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -186,18 +186,20 @@ export default function MediaLibraryPage() {
         {/* Post Type Filter */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2">
+            <Button size="default" variant="outline" className="flex items-center gap-2">
               <Filter className="h-4 w-4" />
               <span className="max-[799px]:hidden">
                 {filterType === "all" ? "All Types" : filterType}
               </span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
-            <DropdownMenuLabel>Filter by Type</DropdownMenuLabel>
-            <DropdownMenuSeparator />
+          <DropdownMenuContent className="" align="start">
+            <DropdownMenuLabel inset="default" className="">Filter by Type</DropdownMenuLabel>
+            <DropdownMenuSeparator className=""/>
             {["all", "article", "quote", "video", "music", "image"].map((type) => (
               <DropdownMenuItem
+                inset="default"
+                
                 key={type}
                 onClick={() => setFilterType(type)}
                 className={filterType === type ? "bg-accent" : ""}
@@ -213,21 +215,22 @@ export default function MediaLibraryPage() {
         {/* Category Filter */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2">
+            <Button size="default" variant="outline" className="flex items-center gap-2">
               <ListFilter className="h-4 w-4" />
               <span className="max-[799px]:hidden">
                 {filterCategory === "all" ? "All Categories" : filterCategory}
               </span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
-            <DropdownMenuLabel>Filter by Category</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => setFilterCategory("all")}>
+          <DropdownMenuContent className="" align="start">
+            <label className="">Filter by Category</label>
+            <DropdownMenuSeparator inset="default" className=""/>
+            <DropdownMenuItem inset="default" className="" onClick={() => setFilterCategory("all")}>
               All Categories
             </DropdownMenuItem>
             {CATEGORIES.map((cat) => (
               <DropdownMenuItem
+                inset="default"
                 key={cat}
                 onClick={() => setFilterCategory(cat)}
                 className={filterCategory === cat ? "bg-accent" : ""}
@@ -246,7 +249,8 @@ export default function MediaLibraryPage() {
             }}
           />
           {filterDate && (
-            <Button
+            <Button 
+              size="default"
               variant="ghost"
               className="text-sm text-muted-foreground hover:text-foreground"
               onClick={() => setFilterDate("")}

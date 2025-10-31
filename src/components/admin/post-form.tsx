@@ -169,7 +169,7 @@ export default function PostForm() {
       )}
 
       <div className="mb-6">
-        <Label htmlFor="postType">Post Type</Label>
+        <label htmlFor="postType">Post Type</label>
         <select
           id="postType"
           value={postType}
@@ -185,7 +185,7 @@ export default function PostForm() {
       </div>
 
       <div className="mb-6">
-        <Label htmlFor="category">Category</Label>
+        <label htmlFor="category">Category</label>
         <select
           id="category"
           value={category}
@@ -203,7 +203,7 @@ export default function PostForm() {
       {postType === "quote" ? (
         <>
           <div className="mb-6">
-            <Label htmlFor="quoteText">Quote</Label>
+            <label htmlFor="quoteText">Quote</label>
             <textarea
               id="quoteText"
               value={quoteText}
@@ -214,19 +214,19 @@ export default function PostForm() {
             />
           </div>
           <div className="mb-6">
-            <Label htmlFor="author">Author</Label>
-            <Input id="author" value={author} onChange={(e) => setAuthor(e.target.value)} className="mt-2" />
+            <label htmlFor="author">Author</label>
+            <input id="author" value={author} onChange={(e) => setAuthor(e.target.value)} className="mt-2" />
           </div>
         </>
       ) : (
         <>
           <div className="mb-6">
-            <Label htmlFor="title">Title</Label>
-            <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} required className="mt-2" />
+            <Label htmlFor="title" className="">Title</Label>
+            <Input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} required className="mt-2" />
           </div>
 
           <div className="mb-6">
-            <Label htmlFor="content">Content</Label>
+            <Label className="" htmlFor="content">Content</Label>
             <textarea
               id="content"
               value={content}
@@ -238,7 +238,7 @@ export default function PostForm() {
 
           {postType === "image" && (
             <div className="mb-6">
-              <Label htmlFor="imageFile">Upload Image</Label>
+              <Label htmlFor="imageFile" className="">Upload Image</Label>
               <Input
                 id="imageFile"
                 type="file"
@@ -251,7 +251,7 @@ export default function PostForm() {
 
           {postType === "video" && (
             <div className="mb-6">
-              <Label htmlFor="videoFile">Upload Video</Label>
+              <Label className="" htmlFor="videoFile">Upload Video</Label>
               <Input
                 id="videoFile"
                 type="file"
@@ -264,7 +264,7 @@ export default function PostForm() {
 
           {postType === "music" && (
             <div className="mb-6">
-              <Label htmlFor="musicFile">Upload Music</Label>
+              <Label className="" htmlFor="musicFile">Upload Music</Label>
               <Input
                 id="musicFile"
                 type="file"

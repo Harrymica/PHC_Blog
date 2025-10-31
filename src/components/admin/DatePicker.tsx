@@ -43,6 +43,7 @@ export function DatePicker({
     <Popover>
       <PopoverTrigger asChild>
         <Button
+        size="default"
           variant="outline"
           className="flex items-center gap-2 w-[220px] justify-start text-left font-normal"
         >
@@ -67,6 +68,7 @@ export function DatePicker({
         </div>
 
         <Calendar
+          className=""  
           mode="single"
           selected={date || undefined}
           onSelect={handleSelect}
