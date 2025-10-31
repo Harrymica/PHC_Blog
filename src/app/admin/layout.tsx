@@ -23,7 +23,7 @@ export default async function AdminLayout({
           cookieStore.set(name, value, options)
         },
         remove(name: string, options: CookieOptions) {
-          cookieStore.delete(name, options)
+          cookieStore.delete(name)
         },
       },
     }
@@ -41,7 +41,7 @@ export default async function AdminLayout({
     <AdminProvider initialSession={session}>
       <div className="flex min-h-screen bg-background transition-all duration-300">
         <AdminSidebar />
-        {/* ✅ Fix: On mobile, main takes full width; on desktop, adjusts for sidebar */}
+      
         <main className="flex-1 w-full md:ml-64 md:pl-4 mb-20 md:mb-0 overflow-auto lg:transition-all lg:duration-300">
           {children}
         </main>
