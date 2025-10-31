@@ -26,7 +26,7 @@ export default function MediaPlayer({ src, type, title }: MediaPlayerProps) {
     return (
       <div className="bg-card border border-border rounded-lg p-4">
         <div className="flex items-center gap-4">
-          <Button size="sm" variant="outline" onClick={() => setIsPlaying(!isPlaying)}>
+          <Button className="" size="sm" variant="outline" onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? <Pause size={16} /> : <Play size={16} />}
           </Button>
           <audio
@@ -36,7 +36,7 @@ export default function MediaPlayer({ src, type, title }: MediaPlayerProps) {
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
           />
-          <Button size="sm" variant="outline" onClick={handleDownload}>
+          <Button  className="" size="sm" variant="outline" onClick={handleDownload}>
             <Download size={16} />
           </Button>
         </div>
@@ -56,7 +56,7 @@ export default function MediaPlayer({ src, type, title }: MediaPlayerProps) {
       />
       <div className="p-4 flex items-center justify-between">
         {title && <p className="font-semibold">{title}</p>}
-        <Button size="sm" variant="outline" onClick={handleDownload}>
+        <Button  className="" size="sm" variant="outline" onClick={handleDownload}>
           <Download size={16} />
         </Button>
       </div>

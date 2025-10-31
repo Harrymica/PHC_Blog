@@ -75,6 +75,14 @@ export function DatePicker({
           month={month}
           onMonthChange={handleMonthChange}
           initialFocus
+          classNames
+          showOutsideDays={true}
+          captionLayout="caption"
+          buttonVariant=""
+          formatters=""
+          components=""
+
+          
         />
       </PopoverContent>
     </Popover>

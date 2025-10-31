@@ -79,6 +79,7 @@ export default function NewsletterPopup() {
           {success && <div className="p-3 bg-green-100 text-green-700 rounded text-sm">Successfully subscribed!</div>}
 
           <Input
+           className=""
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -87,7 +88,7 @@ export default function NewsletterPopup() {
             disabled={loading || success}
           />
 
-          <Button type="submit" className="w-full" disabled={loading || success}>
+          <Button size="default" variant="" type="submit" className="w-full" disabled={loading || success}>
             {loading ? "Subscribing..." : success ? "Subscribed!" : "Subscribe"}
           </Button>
         </form>

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Sun, Moon } from "lucide-react"
 
 export default function SettingsPage() {
-  const { theme, setTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -26,17 +26,19 @@ export default function SettingsPage() {
           <p className="text-sm text-muted-foreground mb-4">Choose your preferred theme</p>
 
           <div className="flex gap-4">
-            <Button
+            <Button 
+            size="default"
               variant={theme === "light" ? "default" : "outline"}
-              onClick={() => setTheme("light")}
+              onClick={() => theme !== "light" && toggleTheme()}
               className="gap-2"
             >
               <Sun size={18} />
               Light
             </Button>
             <Button
+            size="default"
               variant={theme === "dark" ? "default" : "outline"}
-              onClick={() => setTheme("dark")}
+               onClick={() => theme !== "dark" && toggleTheme()}
               className="gap-2"
             >
               <Moon size={18} />
