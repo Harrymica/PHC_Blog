@@ -25,7 +25,7 @@ export default function Home() {
           <TrendingSection />
           <LifeStylesSection />
           <WorldNewsSection />
-          <MediaSection />
+          {/* <MediaSection /> */}
           <WatchNowSection />
           <EntertainmentSection />
           <NewsletterSection />

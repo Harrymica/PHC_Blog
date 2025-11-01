@@ -14,8 +14,8 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-accent">EXP</div>
-            <div className="text-2xl font-bold text-foreground">NEWS</div>
+            <div className="text-2xl font-bold text-accent">PHC</div>
+            <div className="text-2xl font-bold text-foreground">Blog</div>
           </div>
 
           {/* Search and Icons */}

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+.video-bg{
+      background: linear-gradient(45deg, #932121, #392828);
+}
 :root {
   --background: oklch(0.95 0 0);
   --foreground: oklch(0.15 0 0);

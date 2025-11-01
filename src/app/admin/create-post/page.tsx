@@ -33,11 +33,11 @@ export default function CreatePostPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex items-center justify-center min-h-screen bg-background ">
       {/* <AdminSidebar /> */}
-      <main className="flex-1 overflow-auto">
-        <div className="p-6 md:p-8">
-          <h1 className="text-3xl font-bold mb-8">Create New Post</h1>
+      <main className="flex-1 overflow-auto ">
+        <div className="p-6 md:p-8 ">
+          <h1 className="text-3xl font-bold mb-8 text-center">Create New Post</h1>
           <PostForm />
         </div>
       </main>
