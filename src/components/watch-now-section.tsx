@@ -9,8 +9,8 @@ import MediaPlayer from "./media-player";
 export default function WatchNowSection() {
 
   const supabase = createClient();
-   const [mediaItems, setMediaItems] = useState<any[]>([]);
-   const [isReady, setIsReady] = useState(false);
+  const [mediaItems, setMediaItems] = useState<any[]>([]);
+  const [isReady, setIsReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playingId, setPlayingId] = useState<string | null>(null)
 

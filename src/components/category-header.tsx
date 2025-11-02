@@ -4,15 +4,15 @@ import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
 const categories = [
-  { icon: "📰", label: "NEWS" },
-  { icon: "🎯", label: "BLOG" },
-  { icon: "🌍", label: "REGIONS" },
-  { icon: "⚡", label: "ENERGY" },
-  { icon: "🏆", label: "ELECTIONS" },
-  { icon: "🎬", label: "MEDIA" },
-  { icon: "🎮", label: "GAMING" },
-  { icon: "⚽", label: "SPORTS" },
-  { icon: "👁️", label: "WATCH" },
+  { icon: "🔥", label: "Soul Steering Sermons" },
+  { icon: "🎵", label: "Intimacy Worship" },
+  { icon: "📘", label: "Learning Tools" },
+  { icon: "📺", label: "Trending Videos" },
+  { icon: "📅", label: "Upcoming Events" },
+  { icon: "🎨", label: "Church Media Skills" },
+  { icon: "💼", label: "Gospel and Business" },
+  { icon: "💍", label: "Christian Marriage" },
+  { icon: "🎭", label: "Christian Entertainment" },
 ]
 
 export default function CategoryHeader() {
@@ -35,9 +35,9 @@ export default function CategoryHeader() {
             {categories.map((cat) => (
               <button
                 key={cat.label}
-                className="px-4 py-3 text-sm font-medium whitespace-nowrap hover:bg-muted transition border-b-2 border-transparent hover:border-accent"
+                className="px-1 py-3 text-sm font-medium whitespace-nowrap hover:bg-muted transition border-b-2 border-transparent hover:border-accent"
               >
-                <span className="mr-2">{cat.icon}</span>
+                <span className="mr-2 ">{cat.icon}</span>
                 {cat.label}
               </button>
             ))}

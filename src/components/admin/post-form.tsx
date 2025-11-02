@@ -1,22 +1,22 @@
 "use client"
-
 import type React from "react"
 import { useEffect, useState } from "react"
 import { createClient } from "@/lib/supabase/client"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 const CATEGORIES = [
+  "Soul Steering Sermons ",
   "Trending Post",
-  "Most Recent",
   "Popular",
-  "Watch Now",
+  "Intimacy Worship",
+  "Learning Tools",
+  "Trending Videos",
+  "Upcoming Events",
+  "Church Media Skills",
+  "Gospel and Business",
+  "Christian Marriage",
   "Entertainment",
-  "Live",
-  "Life Styles",
-  "World News",
-  "Food & Recipes",
 ]
 
 export default function PostForm() {
@@ -157,6 +157,7 @@ export default function PostForm() {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="max-w-2xl bg-card border border-border rounded-lg p-6">
       {error && <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">{error}</div>}
       {success && <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">Post created successfully!</div>}
@@ -179,7 +180,7 @@ export default function PostForm() {
           <option value="article">Article</option>
           <option value="quote">Quote</option>
           <option value="video">Video</option>
-          <option value="music">Music</option>
+          <option value="music">Music/Audio</option>
           <option value="image">Image</option>
         </select>
       </div>
@@ -281,5 +282,8 @@ export default function PostForm() {
         {loading ? "Creating..." : "Create Post"}
       </button>
     </form>
+  
+    </>
+    
   )
 }

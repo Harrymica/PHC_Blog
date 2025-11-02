@@ -1,33 +1,36 @@
-import ArticleCard from "./article-card"
-import SectionTitle from "./section-title"
+"use client"
+import { useEffect, useState } from "react";
+import ArticleCard from "./article-card";
+import SectionTitle from "./section-title";
+import { createClient } from "@/lib/supabase/client";
 
-const entertainmentArticles = [
-  {
-    id: 11,
-    title: "How to Make Your Makeup Stay All Night Long, According to Rave Girls",
-    category: "ENTERTAINMENT",
-    image: "/makeup-beauty-entertainment.jpg",
-  },
-  {
-    id: 12,
-    title: "Sexy, Gender And Morality: The Unseen History Of Underwear",
-    category: "ENTERTAINMENT",
-    image: "/entertainment-news.png",
-  },
-  {
-    id: 13,
-    title: "Sexy, Gender And Morality: The Unseen History Of Underwear",
-    category: "ENTERTAINMENT",
-    image: "/celebrity-news-headline.png",
-  },
-]
 
 export default function EntertainmentSection() {
+
+  const supabase = createClient();
+  const [post, setPost] = useState<any[]>([]);  
+
+  useEffect(() => {
+
+    async function FetchPost(){
+      const {data} = await supabase.from("posts")
+                    .select("*")
+                    .eq("category", "Entertainment" )
+                    .order("created_at", { ascending: false })
+                    .limit(3)
+                    setPost(data || []);
+
+    }
+    FetchPost();
+    
+
+  }, [supabase])
+  
   return (
     <section className="mb-12">
       <SectionTitle title="ENTERTAINMENT" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {entertainmentArticles.map((article) => (
+        {post.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}
       </div>

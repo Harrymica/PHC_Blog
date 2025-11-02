@@ -3,7 +3,7 @@
 
 
 .video-bg{
-      background: linear-gradient(45deg, #932121, #392828);
+         background: linear-gradient(45deg, #101065, #1a1515);
 }
 :root {
   --background: oklch(0.95 0 0);

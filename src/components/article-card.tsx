@@ -4,8 +4,8 @@ interface Article {
   id: number
   title: string
   category: string
-  image: string
-  excerpt?: string
+  image_url: string
+  content?: string
 }
 
 interface ArticleCardProps {
@@ -20,16 +20,17 @@ export default function ArticleCard({ article, featured, compact }: ArticleCardP
       <div className="col-span-1 md:col-span-2 lg:col-span-2 rounded overflow-hidden bg-card hover:shadow-lg transition cursor-pointer group w-full h-full">
         <div className="relative h-full md:h-80 overflow-hidden">
           <img
-            src={article.image || "/placeholder.svg"}
+            src={article.image_url || "/placeholder.svg"}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+            style={{aspectRatio:"16 / 9"}}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
             <span className="inline-block bg-accent text-accent-foreground px-3 py-1 text-xs font-bold rounded w-fit mb-3">
               {article.category}
             </span>
             <h3 className="text-white font-bold text-xl md:text-2xl line-clamp-2">{article.title}</h3>
-            {article.excerpt && <p className="text-gray-200 text-sm mt-2 line-clamp-2">{article.excerpt}</p>}
+            {article.content && <p className="text-gray-200 text-sm mt-2 line-clamp-2">{article.content}</p>}
           </div>
         </div>
       </div>
@@ -41,7 +42,7 @@ export default function ArticleCard({ article, featured, compact }: ArticleCardP
       <div className="rounded overflow-hidden bg-card hover:shadow-lg transition cursor-pointer group">
         <div className="relative h-40 overflow-hidden">
           <img
-            src={article.image || "/placeholder.svg"}
+            src={article.image_url || "/placeholder.svg"}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
           />
@@ -60,7 +61,7 @@ export default function ArticleCard({ article, featured, compact }: ArticleCardP
   <div className="rounded overflow-hidden bg-card hover:shadow-lg transition cursor-pointer group w-full h-full">
     <div className="relative h-full overflow-hidden"> {/* Increased height */}
       <img
-        src={article.image || "/placeholder.svg"}
+        src={article.image_url || "/placeholder.svg"}
         alt={article.title}
         className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
       />
